@@ -47,7 +47,7 @@ var Compont = React.createClass({
                 <ul>{list}</ul>
                 <form onSubmit={this.onAdd}>
                     <input type="text" ref="name"/>
-                    <input type="submit" value="提交22"/>
+                    <input type="submit" value="提交"/>
                 </form>
             </div>
         );
