@@ -1,7 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Compont = require('./compont.jsx');
+var Compont = require('./compont/compont.jsx');
+var Dropdown = require('./compont/dropdown.jsx');
 
 ReactDOM.render(
 	<Compont

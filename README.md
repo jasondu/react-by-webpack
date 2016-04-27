@@ -4,6 +4,6 @@
 1. 启动react-hot-loader: npm start 或者 node server.js
 2. 启动webpack服务器: webpack-dev-server --port 8082
 3. 打包: webpack
-4. 访问:http://localhost:8080
+4. 访问:http://localhost:8082
 
 [*参考*](http://www.infoq.com/cn/articles/react-and-webpack?utm_source=tuicool)
