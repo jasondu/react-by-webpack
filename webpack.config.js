@@ -18,11 +18,12 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin({
-            template: './index.html',
-            filename: 'index',
+        new HtmlWebpackPlugin({         // 访问localhost:3000/static/app.html
+            title: 'HtmlWebpackPlugin',
+            filename: 'app.html',
+            template: 'index.html',
             inject: 'body',
-            chunks: ['bundle']
+            hash: true
         })
     ],
     module: {
