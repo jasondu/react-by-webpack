@@ -11,7 +11,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: 'http://localhost:3000/'    // 切记,要不然就会出现"Cannot find update. Need to do a full reload"
+        publicPath: '/static/
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
