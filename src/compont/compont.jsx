@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+require('../style/app.less');
 
 
 var Compont = React.createClass({

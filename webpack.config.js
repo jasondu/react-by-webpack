@@ -1,5 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'eval',
@@ -11,16 +13,32 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/static/'
+        publicPath: '/static/',
+        chunkFilename: '[chunkhash:8].chunk.min.js'
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            filename: 'index',
+            inject: 'body',
+            chunks: ['bundle']
+        })
     ],
     module: {
-        loaders: [{
-            test: /\.js|jsx$/,
-            loaders: ['react-hot', 'jsx-loader'],
-            include: path.join(__dirname, 'src')
-        }]
-    }
+        loaders: [
+            {
+                test: /\.js|jsx$/,
+                loaders: ['react-hot', 'jsx-loader'],
+                include: path.join(__dirname, 'src')
+            },
+            {
+                test: /\.less$/,
+                exclude: /node_modules/,
+                loader: 'style!css!postcss!less',
+                include: path.join(__dirname, 'src')
+            }
+        ]
+    },
+    postcss: [autoprefixer]
 };
